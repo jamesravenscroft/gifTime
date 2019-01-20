@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Quoth the Giphy</title>
+  
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Giphy Time</h1>
+
+    <!-- Movies will Get Dumped Dere -->
+    <div id="personButtons">
+<button data="person"></button>
+    </div>
+
+    <!-- Rendered Buttons will get Dumped Here  -->
+    <div id="input[type=button]"></div>
+
+
+    <!-- <form id="movie-form">
+      <label for="movie-input">Add a Movie Bro</label>
+      <input type="text" id="movie-input"><br>  -->
+
+      <!-- Button triggers new movie to be added -->
+      <!-- <input id="add-movie" type="submit" value="Add a Movie Bro">
+    </form> -->
+  <!-- <button data-person="Arnold Schwarzenegger">I'll be back</button>
+  <button data-person="Michael J Fox">
+    My happiness grows in direct proportion to my acceptance,
+    and in inverse proportion to my expectations.
+  </button> -->
+  <!-- STEP TWO: between the dashed lines below
+        * add three more buttons
+        * add a data-person attribute of famous people you know
+        * with a quote said by them -->
+
+  <!--  -->
+<!-- 
+  <button data-person="Lucille Ball">
+    Love yourself first and everything else falls into line.
+  </button>
+  <button data-person="Taylor Swift">
+    If you're horrible to me, I'm going to write a song about it,
+    and you won't like it. That's how I operate.
+  </button>
+  <button data-person="Samuel Jackson">
+    Far better is it to dare mighty things, to win glorious triumphs,
+    even though checkered by failure... than to rank with those poor spirits who
+    neither enjoy nor suffer much, because they live in a gray twilight that
+    knows not victory nor defeat.
+  </button> -->
+
+  <div id="gifs-appear-here">
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="logicGiphy.js">
+
+</script>
+</body>
+
+</html>
+<!-- 
+$(this).data('contentId')
+or 
+var attrValue = $(serverresponse).find('<a>').attr('data-contentId');
+  alert(attrValue );
+
+
+$(document).ready(function(){
+    $('button .delete-row').on('click', function(){
+        //execute some code 
+    });
+});
+
+It worked perfectly for all buttons available at the time of page load, 
+But I was also updating the DOM using some ajax calls and jquery was not able 
+to bind the click event on the buttons created dynamically.
+
+So to fix this issue we need to call the on method on outer elements under
+ which we append the elements dynamically and pass jquery selector as a second argument.
+
+$(document).ready(function() {
+    $(document).on("click","button .delete-row",function(){ 
+        // Do something when button is clicked
+    });
+});
+The difference between both forms of on method is, the first one binds the 
+event to all applicable elements present at the time of its execution and in
+ second form it finds the applicable elements dynamically under the document 
+ object and triggers the click event.
+
+
+function displayNetflixShow() {
+
+	var x = $(this).data("search");
+	console.log(x);
+
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + x + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+	console.log(queryURL);
+
+	$.ajax({
+          url: queryURL,
+          method: "GET"
+        }).done(function(response) {
+        	var results = response.data;
+        	console.log(results);
+        	for (var i = 0; i < results.length; i++) {
+        	
+        	var showDiv = $("<div class='col-md-4'>");
+
+        	var rating = results[i].rating;
+        	var defaultAnimatedSrc = results[i].images.fixed_height.url;
+        	var staticSrc = results[i].images.fixed_height_still.url;
+        	var showImage = $("<img>");
+        	var p = $("<p>").text("Rating: " + rating);
+
+        	showImage.attr("src", staticSrc);
+        	showImage.addClass("netflixGiphy");
+        	showImage.attr("data-state", "still");
+        	showImage.attr("data-still", staticSrc);
+        	showImage.attr("data-animate", defaultAnimatedSrc);
+          
+          showDiv.append(p);
+          
+          showDiv.append(showImage);
+          
+        	$("#gifArea").prepend(showDiv);
+
+        }
+	});
+}
+-->
+
