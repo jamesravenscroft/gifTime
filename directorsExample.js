@@ -3,22 +3,22 @@ $(function() {
     // console.log("page loaded");
 })
 
-// Initial array of super heroes
+// Initial array 
 var directors = ["guillermo del toro", "robert rodriguez", "quentin tarantino", "john carpenter", "george romero", "spielberg", "martin scorcese", "cohen brothers", ];
 
 // Function for displaying data
 function renderButtons() {
 
-    // Deleting the hero buttons prior to ADDING NEW MOVIE BUTTONS
+    // Deleting the buttons prior to ADDING NEW MOVIE BUTTONS
     // (this is necessary otherwise will have repeat buttons)
     $("#buttons-view").empty();
 
-    // Looping through the array of superHeroes
+    // Looping through the array
     for (var i = 0; i < directors.length; i++) {
-        // Then dynamicaly generating buttons for each hero in the array
+        // Then dynamicaly generating buttons for each director in the array
         // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
         var b = $("<button class='btn btn-info'>");
-        // Adding a class of hero-btn to our button
+        // Adding a class of director-btn to our button
         b.addClass("director-btn");
         // Adding a data-attribute
         b.attr("data-name", directors[i]);
@@ -37,9 +37,9 @@ function displayRatingInfo() {
     var h = $(this).attr('data-name');
     // console.log(this);
     
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + h + "&api_key=S0s43WOAT4jzNdL4GICYdNrVfDl0MWMH&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + h + "&api_key=gSuEBAgg2KD239ccHzRWYEpyuMRvPRiG&limit=10";
     // console.log(queryURL);
-    // Creating an AJAX call for the specific hero button being clicked
+    // Creating an AJAX call for the specific director button being clicked
     $.ajax({
         url:queryURL, 
         method: 'GET'
@@ -86,15 +86,15 @@ $('#add-director').on('click', function(event) {
 
     // This line will grab the text from the input box
     var director = $("#directors-input").val().trim();
-    // console.log(hero);
+    // console.log(director);
 
-    // The superhero entered from the textbox is then added to our array
+    // The director entered from the textbox is then added to our array
     directors.push(director);
 
     // Putting the entire form above the previous gifs
-    // $("#heroes-form").prepend(heroesDiv);
+   
 
-    // calling renderButtons which handles the processing of our superHeroes array
+    // calling renderButtons which handles the processing of  array
     renderButtons();
 });
 
