@@ -116,7 +116,7 @@ $('#directors-view').on('click', '.pause', function() {
  });
 
 // ================EVENTS=================================
-// $(document).on('click', '#add-hero');
+// $(document).on('click', '#add-director');
 
 // Added a click event listener to all elements with a class of "director-btn"
 $(document).on('click', '.director-btn', displayRatingInfo);
