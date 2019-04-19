@@ -4,7 +4,7 @@ $(function() {
 })
 
 // Initial array 
-var directors = ["guillermo del toro", "robert rodriguez", "quentin tarantino", "john carpenter", "george romero", "spielberg", "martin scorcese", "cohen brothers", ];
+var directors = ["guillermo del toro", "robert rodriguez", "quentin tarantino", "john carpenter", "Penelope Spheeris", "spike lee", "george romero", "spielberg", "martin scorcese", "cohen brothers", ];
 
 // Function for displaying data
 function renderButtons() {
